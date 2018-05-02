@@ -143,7 +143,7 @@ class Ranker:
         :param team_result: str
         :return: int
         """
-        return team_result.rsplit(" ", 1)[1]
+        return int(team_result.rsplit(" ", 1)[1])
 
     def _get_team_name(self, team_result):
         """
