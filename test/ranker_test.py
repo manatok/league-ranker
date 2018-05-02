@@ -6,8 +6,6 @@ from lrank.error import FileNotFoundError
 
 
 class RankerTestCase(unittest.TestCase):
-    def setUp(self):
-        return
 
     def test_file_not_exits(self):
         """
@@ -80,7 +78,7 @@ class RankerTestCase(unittest.TestCase):
 
 def get_expected_results(filename):
     """
-    A utility method for reading the lines of a file and returning them as a list
+    A utility method for reading the lines of a file and returning them as a list.
 
     :param filename: str
     :return: list of str
