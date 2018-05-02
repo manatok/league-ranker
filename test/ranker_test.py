@@ -41,6 +41,42 @@ class RankerTestCase(unittest.TestCase):
         test_ranker = Ranker()
         self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not rank the data correctly.')
 
+    def test_double_digit_scores(self):
+        """
+        Make sure that scores with double digits are handled properly.
+        """
+        example_input = 'test/data/input_high_scores.txt'
+        expected_output = 'test/data/output_high_scores.txt'
+
+        expected_results = get_expected_results(expected_output)
+
+        test_ranker = Ranker()
+        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not rank the data correctly.')
+
+    def test_long_team_names(self):
+        """
+        Make sure that scores with double digits are handled properly.
+        """
+        example_input = 'test/data/input_long_team_names.txt'
+        expected_output = 'test/data/output_long_team_names.txt'
+
+        expected_results = get_expected_results(expected_output)
+
+        test_ranker = Ranker()
+        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not rank the data correctly.')
+
+    def test_quoted_names(self):
+        """
+        Make sure that scores with double digits are handled properly.
+        """
+        example_input = 'test/data/input_quotes.txt'
+        expected_output = 'test/data/output_quotes.txt'
+
+        expected_results = get_expected_results(expected_output)
+
+        test_ranker = Ranker()
+        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not rank the data correctly.')
+
 
 def get_expected_results(filename):
     """
