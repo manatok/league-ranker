@@ -28,7 +28,7 @@ Given the example input file above, the app will output the follow:
 ### Installation
 1. Clone out the repo.
 2. `cd league-ranker/`
-3. `chown +x install.sh`
+3. `chmod +x install.sh`
 4. `./install.sh`
 
 At this point you should have a binary `lrank` available to use.
