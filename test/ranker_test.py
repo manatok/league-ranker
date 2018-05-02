@@ -39,7 +39,7 @@ class RankerTestCase(unittest.TestCase):
         expected_results = get_expected_results(expected_output)
 
         test_ranker = Ranker()
-        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not rank the data correctly.')
+        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not handle multiple duplicates.')
 
     def test_double_digit_scores(self):
         """
@@ -51,11 +51,11 @@ class RankerTestCase(unittest.TestCase):
         expected_results = get_expected_results(expected_output)
 
         test_ranker = Ranker()
-        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not rank the data correctly.')
+        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Large scores broke the build.')
 
     def test_long_team_names(self):
         """
-        Make sure that scores with double digits are handled properly.
+        Make sure that teams can have really long names.
         """
         example_input = 'test/data/input_long_team_names.txt'
         expected_output = 'test/data/output_long_team_names.txt'
@@ -63,11 +63,11 @@ class RankerTestCase(unittest.TestCase):
         expected_results = get_expected_results(expected_output)
 
         test_ranker = Ranker()
-        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not rank the data correctly.')
+        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Long team names broke the build.')
 
     def test_quoted_names(self):
         """
-        Make sure that scores with double digits are handled properly.
+        Make sure that teams can have quotes in their names.
         """
         example_input = 'test/data/input_quotes.txt'
         expected_output = 'test/data/output_quotes.txt'
@@ -75,7 +75,7 @@ class RankerTestCase(unittest.TestCase):
         expected_results = get_expected_results(expected_output)
 
         test_ranker = Ranker()
-        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Did not rank the data correctly.')
+        self.assertEqual(test_ranker.rank(example_input), expected_results, 'Quotes in the team-names broke the build.')
 
 
 def get_expected_results(filename):
