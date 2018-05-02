@@ -11,6 +11,7 @@ Options:
   -h --help             Show this screen.
   --version             Show version.
   <input>               Path to the input file.
+  example:              `lrank test/data/input_single_duplicate.txt`
 
 
 """
